@@ -1,6 +1,6 @@
-#- name: 
- # hosts: all
-  #become: true
+- name: 
+  hosts: all
+  become: true
 
-  #roles:
-  #  - geerlingguy.docker
+  roles:
+  - geerlingguy.docker

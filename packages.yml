@@ -1,0 +1,15 @@
+---
+- name: Install tasks
+  hosts: local
+  connection: local
+  become: true
+
+  tasks:
+    - name: Install unzip
+      packages:
+        name: unzip
+        state: present
+    - name: Install net-tools
+      packages:
+        name: net-tools
+        state: present
