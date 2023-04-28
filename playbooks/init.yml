@@ -2,5 +2,15 @@
   hosts: all
   become: true
 
+  vars:
+    docker_user: 
+      - panda
+      - vagrant
+
   roles:
   - geerlingguy.docker
+  - user
+  - packages
+  - christiangda.awscli
+  - christiangda.awscli_configure
+  - diodonfrost.terraform
