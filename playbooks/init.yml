@@ -3,14 +3,17 @@
   become: true
 
   vars:
-    docker_user: 
-      - panda
-      - vagrant
+    docker_users: 
+    - panda
+    - vagrant
+
+    docker_daemon_options:
+      insecure-registries : ["192.168.44.44:8082"]
 
   roles:
-  - geerlingguy.docker
   - user
   - packages
+  - geerlingguy.docker
   - christiangda.awscli
   - christiangda.awscli_configure
   - diodonfrost.terraform
