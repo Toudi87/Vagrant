@@ -19,13 +19,7 @@ Vagrant.configure("2") do |config|
     }
 
   end
-
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "playbooks/infrastructure.yml"
-   
-
-  end
-
+  
   config.vm.provision "ansible_local" do |ansible|
     ansible.galaxy_role_file = 'requirements.yml'
     ansible.galaxy_roles_path = "/etc/ansible/roles/" 
@@ -33,6 +27,12 @@ Vagrant.configure("2") do |config|
     ansible.playbook = "playbooks/init.yml"
   end
 
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.playbook = "playbooks/infrastructure.yml"
+   
+
+  end
+  
   if VAGRANT_COMMAND == "ssh"
     config.ssh.username = 'panda'
   end
